@@ -13,7 +13,7 @@ import shelve # database
 LINK_CHAT = 'https://t.me/ReadyHubChat' # ссылка на чат
 START_COMMAND = """<b>Привет!, я работаю только в этом чате: @ReadyHubChat\nСоздатель: @BeanD_TM\nКанал: @ReadyHub</b>""" # текст по команде /start
 CHAT_ID = -1001790665314 # your chat id [from https://t.me/myidbot]
-ADMIN_ID = 2074068795 # your chat id [from https://t.me/myidbot]
+ADMIN_ID = 2074068795 # your id [from https://t.me/myidbot]
 DELAY = 10 # Задержка после запросов (.5 = 0.50)
 BOT_TOKEN = '' # from BotFather
 OPENAI_TOKEN = '' # token openAI
