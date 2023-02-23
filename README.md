@@ -30,7 +30,7 @@ TelegramChatGpt is Multifunctional chatgpt in telegram bot for chat.
 
 
     <div class="end" align="center">
-        <a target="_blank" href="t.me/BeanD_TM">
+        <a target="_blank" href="https://t.me/BeanD_TM">
           <img src="https://media.giphy.com/media/ya4eevXU490Iw/giphy.gif" width="150"/>
         </a>
     </div>
