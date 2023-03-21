@@ -15,8 +15,8 @@ START_COMMAND = """<b>Привет!, я работаю только в этом 
 CHAT_ID = -1001790665314 # your chat id [from https://t.me/myidbot]
 ADMIN_ID = 2074068795 # your id [from https://t.me/myidbot]
 DELAY = 10 # Задержка после запросов (.5 = 0.50)
-BOT_TOKEN = '' # from BotFather
-OPENAI_TOKEN = '' # token openAI
+BOT_TOKEN = '6128642151:AAFVq9VFnuQk5m7qaJawR7uVPeSjomllpDo' # from BotFather
+OPENAI_TOKEN = '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' # token openAI
 
 # Инициализация OpenAI API
 openai.api_key = OPENAI_TOKEN  
