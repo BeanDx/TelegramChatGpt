@@ -11,7 +11,7 @@ import asyncio # for sleep
 import shelve # database
 
 LINK_CHAT = 'https://t.me/ReadyHubChat' # ссылка на чат
-START_COMMAND = """<b>Привет!, я работаю только в этом чате: @ReadyHubChat\nСоздатель: @BeanD_TM\nКанал: @ReadyHub</b>""" # текст по команде /start
+START_COMMAND = """<b>Привет!, я могу сгенерировать текст, картинку, а также отправить скриншот сайта по ссылке.\n\nЯ работаю только в этом чате: @ReadyHubChat\nСоздатель: @BeanD_TM\nКанал: @ReadyHub</b>""" # текст по команде /start
 CHAT_ID = -1001790665314 # your chat id [from https://t.me/myidbot]
 ADMIN_ID = 2074068795 # your id [from https://t.me/myidbot]
 DELAY = 10 # Задержка после запросов (.5 = 0.50)
@@ -79,8 +79,8 @@ async def cmd_img(message: types.Message):
             if message.chat.id == CHAT_ID:
                 query = message.text.replace('/img ', '') # Получаем текст запроса пользователя
                 
-                if len(query) > 20: # Проверяем длину запроса пользователя
-                    await message.reply("Слишком длинный запрос. Максимальная длина запроса - 20 символов.")
+                if len(query) > 50: # Проверяем длину запроса пользователя
+                    await message.reply("Слишком длинный запрос. Максимальная длина запроса - 50 символов.")
                 else:
                     response = openai.Image.create(
                         prompt=f"Generate image of {query}",
@@ -95,6 +95,22 @@ async def cmd_img(message: types.Message):
                 await asyncio.sleep(DELAY) # делаем задержку в 10 секунд
             else:
                 await message.reply(START_COMMAND, parse_mode='HTML')
+
+# Обработчик команды /site
+@dp.message_handler(Command('site'))
+async def screen_site(message: types.Message):
+    if message.chat.id == CHAT_ID: # Проверяем, что запрос был отправлен в определенной группе
+        user_id = message.from_user.id # Получаем ID пользователя, который отправил запрос
+    # Получаем список забаненных пользователей из хранилища
+    with shelve.open('ban_list') as db:
+        banned_users = list(db.keys())
+    if str(user_id) in banned_users: # Проверяем, находится ли ID пользователя в списке забаненных пользователей
+        await message.reply('Вы забанены и не можете использовать эту команду.')
+    else:
+        if message.chat.id == CHAT_ID:
+            query = message.text.replace('/site ', '') # Получаем текст запроса пользователя
+            await bot.send_photo(chat_id=message.chat.id, photo=f"https://mini.s-shot.ru/1366x768/JPEG/1366/Z100/?{query}", caption=f'Сайт [{query}]') # Отправляем изображение пользователю
+
 
 # Обработчик команды /gpt_ban
 @dp.message_handler(lambda message: message.reply_to_message, commands=['gpt_ban'])
