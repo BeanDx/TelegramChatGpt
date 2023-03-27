@@ -12,11 +12,11 @@ import shelve # database
 
 LINK_CHAT = 'https://t.me/ReadyHubChat' # ссылка на чат
 START_COMMAND = """<b>Привет!, я могу сгенерировать текст, картинку, а также отправить скриншот сайта по ссылке.\n\nЯ работаю только в этом чате: @ReadyHubChat\nСоздатель: @BeanD_TM\nКанал: @ReadyHub</b>""" # текст по команде /start
-CHAT_ID = -1001790665314 # your chat id [from https://t.me/myidbot]
-ADMIN_ID = 2074068795 # your id [from https://t.me/myidbot]
-DELAY = 10 # Задержка после запросов (.5 = 0.50)
-BOT_TOKEN = '6128642151:AAFVq9VFnuQk5m7qaJawR7uVPeSjomllpDo' # from BotFather
-OPENAI_TOKEN = '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' # token openAI
+CHAT_ID = -12345 # your chat id [from https://t.me/myidbot]
+ADMIN_ID = 12345 # your id [from https://t.me/myidbot]
+DELAY = 10 # Задержка после запросов (.5 = 0.50s)
+BOT_TOKEN = '' # from BotFather
+OPENAI_TOKEN = '' # token openAI
 
 # Инициализация OpenAI API
 openai.api_key = OPENAI_TOKEN  
