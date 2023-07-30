@@ -11,7 +11,7 @@ import asyncio # for sleep
 import time # for ping command
 
 START_COMMAND = """<b>Привет!, я могу сгенерировать текст, картинку, а также отправить скриншот сайта по ссылке.\n\nЯ работаю только в этом чате: @ReadyHubChat\nСоздатель: @BeanD_TM\nКанал: @ReadyHub</b>""" # текст по команде /start
-BOT_TOKEN = '6128642151:AAFVq9VFnuQk5m7qaJawR7uVPeSjomllpDo'
+BOT_TOKEN = '1231231312'
 
 # Инициализация телеграмм-бота
 bot = Bot(token=BOT_TOKEN) 
