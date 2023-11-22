@@ -16,8 +16,8 @@ NON_ARG_TEXT = """<b>Вы не ввели текст запроса!\n\nПопр
 CHAT_ID = -1001790665314 # your chat id [from https://t.me/myidbot]
 ADMIN_ID = 2074068795 # your id [from https://t.me/myidbot]
 DELAY = 10 # Задержка после запросов (.5 = 0.50)
-BOT_TOKEN = '6128642151:AAFVq9VFnuQk5m7qaJawR7uVPeSjomllpDo' # from BotFather
-OPENAI_TOKEN = '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' # token openAI
+BOT_TOKEN = '' # from BotFather
+OPENAI_TOKEN = '' # token openAI
 
 SECOND_GROUP = -1001775763708
 TEST_GROUP = -1001883705590
